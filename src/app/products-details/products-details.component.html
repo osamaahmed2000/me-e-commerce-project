@@ -1,0 +1,22 @@
+<div class="row d-flex align-items-center">
+    <div class="col-md-3">
+      
+       
+        <img class="w-100" [src]="productDetailsList?.imageCover" alt="">
+    </div>
+    <div class="col-md-9">
+        <h3>{{productDetailsList?.title  | uppercase}}</h3>
+        <p>{{productDetailsList?.description}}.</p>
+        <p>{{productDetailsList?.category?.name}}</p>
+        <div class="my-3 d-flex justify-content-between">
+            <span>{{productDetailsList?.price}}Egp</span>
+            <span>
+                <i class="fa-solid fa-star rating-color"></i>
+                {{productDetailsList?.ratingsAverage}}
+            </span>
+          
+        </div>
+        <h2>{{productDetailsList?.createdAt | date:"yyy/mm/dd  HH:mm"}}</h2>
+        <button  class="btn btn-success w-100">+ add to cart</button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="py-5">
+    <h3 class="py-3">Login Now :</h3>
+    
+    <form (ngSubmit)="submitLogin(loginForm)" [formGroup]="loginForm">
+    
+        
+        <div class="my-2">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" class="form-control" name="email">
+            <div *ngIf="loginForm.get('email')?.errors&&loginForm.get('email')?.touched" class="alert alert-danger">
+           <p *ngIf="loginForm.get('email')?.errors?.['required']">Email is Required</p>
+           <p *ngIf="loginForm.get('email')?.errors?.['email']">Email Not Valid</p>
+            </div>
+        </div>
+        <div  class="my-2">
+            <label for="password">Password</label>
+            <input  formControlName="password" type="password" id="password" class="form-control" name="password">
+            <div *ngIf="loginForm.get('password')?.errors&&loginForm.get('password')?.touched" class="alert alert-danger">
+                <p *ngIf="loginForm.get('password')?.errors?.['required']">Password is Required</p>
+                <p *ngIf="loginForm.get('password')?.errors?.['pattern']">Password Not Valid</p>
+    
+            </div>
+        </div>
+        
+        
+        
+        <button *ngIf="!loading" [disabled]="!loginForm.valid" type="submit" class="btn btn-success m-3 d-block ms-auto">Login</button>
+        <button *ngIf="loading"    type="button" class="btn btn-success m-3 d-block ms-auto">
+            <!-- <i class="fa-solid fa-spinner fa-spin"></i> -->
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+        </button>
+    
+    </form>
+    </div>
