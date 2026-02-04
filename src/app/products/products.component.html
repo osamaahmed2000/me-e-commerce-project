@@ -1,54 +1,38 @@
-
-
 <div class="py-5">
-<div class="row g-3">
+  <div class="row g-3">
     <div *ngFor="let product of productList" class="col-md-2">
-
-    <div [routerLink]="['/productsDetails',product._id]" class="product cursor-pointer ">
-            <img class="w-100" [src]="product.imageCover" alt="">
-            <p class="text-main">{{product.category.name}}</p>
-                <h6>{{product.title.split(' ').slice(0,2).join(' ')}}</h6>
-                <div class="d-flex justify-content-between">
-                    <span>{{product.price}}Egp</span>
-                    <span>
-                        <i class="rating-color fa-solid fa-star"></i>
-                        {{product.ratingsAverage}}
-                    </span>
-                </div>
+      <div
+        [routerLink]="['/productsDetails', product._id]"
+        class="product cursor-pointer"
+      >
+        <img class="w-100" [src]="product.imageCover" alt="" />
+        <p class="text-main">{{ product.category.name }}</p>
+        <h6>{{ product.title.split(" ").slice(0, 2).join(" ") }}</h6>
+        <div class="d-flex justify-content-between">
+          <span>{{ product.price }}Egp</span>
+          <span>
+            <i class="rating-color fa-solid fa-star"></i>
+            {{ product.ratingsAverage }}
+          </span>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 
-  <nav class="d-flex justify-content-center"  aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link pagenum" >1</a></li>
-      <li class="page-item"><a class="page-link pagenum" >2</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- <nav class="d-flex justify-content-center" aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link pagenum" >1</a></li>
-      <li class="page-item"><a class="page-link pagenum" href="#">2</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav> -->
+<nav class="d-flex justify-content-center" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link pagenum">1</a></li>
+    <li class="page-item"><a class="page-link pagenum">2</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
